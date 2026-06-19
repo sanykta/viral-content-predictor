@@ -20,7 +20,7 @@ def setup_nltk():
 setup_nltk()
 
 sia = SentimentIntensityAnalyzer()
-st.success("App loaded successfully 🚀")
+
 @st.cache_resource
 def load_models():
 
