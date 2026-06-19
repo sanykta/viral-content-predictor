@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import joblib
 import re
-from transformers import pipeline
+import transformers
 
 viral_model = joblib.load("viral_predictor_pipeline (1).pkl")
 threshold = joblib.load("threshold (1).pkl")
@@ -15,8 +15,7 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 
 sia = SentimentIntensityAnalyzer()
 
-from transformers import pipeline
-emotion_model = pipeline(
+emotion_model = transformers.pipeline(
     "text-classification",
     model="SamLowe/roberta-base-go_emotions",
     top_k=None
