@@ -6,7 +6,6 @@ import streamlit as st
 
 import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
-sia = SentimentIntensityAnalyzer()
 
 from transformers.pipelines import pipeline
 
@@ -20,6 +19,7 @@ def setup_nltk():
 
 setup_nltk()
 
+sia = SentimentIntensityAnalyzer()
 
 @st.cache_resource
 def load_models():
