@@ -3,6 +3,7 @@ import pandas as pd
 import joblib
 import re
 import streamlit as st
+
 from transformers.pipelines import pipeline
 
 viral_model = joblib.load("viral_predictor_pipeline (1).pkl")
@@ -19,7 +20,7 @@ sia = SentimentIntensityAnalyzer()
 @st.cache_resource
 def load_emotion_model():
 
-    return transformers.pipeline(
+    return pipeline(
         "text-classification",
         model="SamLowe/roberta-base-go_emotions",
         top_k=None
