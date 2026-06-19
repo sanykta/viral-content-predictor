@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import re
 import streamlit as st
-import transformers
+from transformers.pipelines import pipeline
 
 viral_model = joblib.load("viral_predictor_pipeline (1).pkl")
 threshold = joblib.load("threshold (1).pkl")
