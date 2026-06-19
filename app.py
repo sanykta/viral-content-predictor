@@ -563,3 +563,113 @@ def predict_content(
 
         "Recommendations": recommendations
     }
+
+# Streamlit UI
+
+st.title(
+    "🚀 Viral Content Predictor"
+)
+
+
+st.write(
+    "Predict your video's viral potential using AI"
+)
+
+
+title = st.text_input(
+    "Video Title"
+)
+
+
+description = st.text_area(
+    "Video Description"
+)
+
+
+duration_seconds = st.number_input(
+    "Video Duration (seconds)",
+    min_value=0,
+    value=300
+)
+
+
+subscriber_count = st.number_input(
+    "Subscriber Count",
+    min_value=0,
+    value=1000
+)
+
+
+channel_avg_views = st.number_input(
+    "Channel Average Views",
+    min_value=0,
+    value=1000
+)
+
+
+upload_day = st.selectbox(
+    "Upload Day",
+    [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ]
+)
+
+
+upload_hour = st.slider(
+    "Upload Hour (24H format)",
+    0,
+    23,
+    18
+)
+
+
+if st.button(
+    "Predict Viral Potential"
+):
+
+    result = predict_content(
+
+        title,
+        description,
+        duration_seconds,
+        subscriber_count,
+        channel_avg_views,
+        upload_day,
+        upload_hour
+    )
+
+
+    st.metric(
+        "Creator Score",
+        result["Creator Score"]
+    )
+
+
+    st.success(
+        result["Viral Prediction"]
+    )
+
+
+    st.write(
+        "Expected Performance:",
+        result["Expected Performance"]
+    )
+
+
+    st.subheader(
+        "Recommendations"
+    )
+
+
+    for r in result["Recommendations"]:
+
+        st.write(
+            "•",
+            r
+        )
