@@ -26,8 +26,6 @@ def load_emotion_model():
         top_k=None
     )
 
-emotion_model = load_emotion_model()
-
 def get_sentiment(text):
 
     sentiment_score = sia.polarity_scores(
@@ -56,6 +54,8 @@ def get_sentiment(text):
     )
 
 def get_emotions(text):
+    
+    emotion_model = load_emotion_model()
 
     result = emotion_model(
         text,
