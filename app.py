@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import joblib
 import re
+import streamlit as st
 import transformers
 
 viral_model = joblib.load("viral_predictor_pipeline (1).pkl")
@@ -15,11 +16,16 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 
 sia = SentimentIntensityAnalyzer()
 
-emotion_model = transformers.pipeline(
-    "text-classification",
-    model="SamLowe/roberta-base-go_emotions",
-    top_k=None
-)
+@st.cache_resource
+def load_emotion_model():
+
+    return transformers.pipeline(
+        "text-classification",
+        model="SamLowe/roberta-base-go_emotions",
+        top_k=None
+    )
+
+emotion_model = load_emotion_model()
 
 def get_sentiment(text):
 
