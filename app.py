@@ -4,6 +4,12 @@ import joblib
 import re
 import streamlit as st
 
+import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
+sia = SentimentIntensityAnalyzer()
+
+from transformers.pipelines import pipeline
+
 @st.cache_resource
 def setup_nltk():
 
@@ -14,7 +20,6 @@ def setup_nltk():
 
 setup_nltk()
 
-from transformers.pipelines import pipeline
 
 @st.cache_resource
 def load_models():
@@ -50,10 +55,6 @@ def load_models():
     label_encoder
 ) = load_models()
 
-import nltk
-from nltk.sentiment import SentimentIntensityAnalyzer
-
-sia = SentimentIntensityAnalyzer()
 
 @st.cache_resource
 def load_emotion_model():
