@@ -4,15 +4,53 @@ import joblib
 import re
 import streamlit as st
 
+@st.cache_resource
+def setup_nltk():
+
+    nltk.download(
+        "vader_lexicon"
+    )
+
+
+setup_nltk()
+
 from transformers.pipelines import pipeline
 
-viral_model = joblib.load("viral_predictor_pipeline (1).pkl")
-threshold = joblib.load("threshold (1).pkl")
-category_model = joblib.load("performance_category_pipeline (1).pkl")
-label_encoder = joblib.load("category_label_encoder (1).pkl")
+@st.cache_resource
+def load_models():
+
+    viral_model = joblib.load(
+        "viral_predictor_pipeline (1).pkl"
+    )
+
+    threshold = joblib.load(
+        "threshold (1).pkl"
+    )
+
+    performance_model = joblib.load(
+        "performance_category_pipeline (1).pkl"
+    )
+
+    label_encoder = joblib.load(
+        "category_label_encoder (1).pkl"
+    )
+
+    return (
+        viral_model,
+        threshold,
+        performance_model,
+        label_encoder
+    )
+
+
+(
+    viral_model,
+    threshold,
+    performance_model,
+    label_encoder
+) = load_models()
 
 import nltk
-nltk.download("vader_lexicon")
 from nltk.sentiment import SentimentIntensityAnalyzer
 
 sia = SentimentIntensityAnalyzer()
