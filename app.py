@@ -533,12 +533,10 @@ def predict_content(
         viral_prediction = "Needs Optimization"
 
     # Performance category
-
-    category_prediction = category_model.predict(
+    category_prediction = performance_model.predict(
         input_data
     )
-
-
+    
     performance_category = (
         label_encoder.inverse_transform(
             category_prediction
