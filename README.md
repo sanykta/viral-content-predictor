@@ -1,6 +1,6 @@
-# 🎥 Viral Content Performance Prediction and Optimization using NLP
+#Viral Content Performance Prediction and Optimization using NLP
 
-## 📌 Overview
+#Overview
 
 Creating viral content on YouTube often depends on a combination of content quality, audience behavior, timing, and presentation. While there is no guaranteed formula for virality, machine learning can identify patterns associated with high-performing videos.
 
@@ -8,7 +8,7 @@ This project develops an end-to-end machine learning pipeline that predicts the 
 
 ---
 
-# 🎯 Problem Statement
+#Problem Statement
 
 Content creators upload thousands of videos every day, but it is difficult to predict which ones are likely to perform well.
 
@@ -21,11 +21,11 @@ The objective of this project is to:
 
 ---
 
-# 📊 Dataset
+#Dataset
 
 The dataset was collected using the **YouTube Data API** and contains over **4,200 YouTube videos** from multiple channels.
 
-### Data includes:
+#Data includes:
 
 * Video Title
 * Published Date
@@ -41,7 +41,7 @@ The dataset was collected using the **YouTube Data API** and contains over **4,2
 
 ---
 
-# 🔍 Exploratory Data Analysis (EDA)
+#Exploratory Data Analysis (EDA)
 
 The project includes comprehensive exploratory data analysis to understand the characteristics of high-performing videos.
 
@@ -58,11 +58,11 @@ Key analyses include:
 
 ---
 
-# ⚙️ Feature Engineering
+#Feature Engineering
 
 Several new features were created to improve predictive performance.
 
-### Text Features
+#Text Features
 
 * Title Length
 * Word Count
@@ -73,19 +73,19 @@ Several new features were created to improve predictive performance.
 * Has Hashtag
 * Hashtag Count
 
-### Temporal Features
+#Temporal Features
 
 * Upload Month
 * Upload Hour
 * Weekend Upload Indicator
 
-### Channel Features
+#Channel Features
 
 * Subscriber Count
 * Channel Average Views
 * Views per Subscriber
 
-### NLP Features
+#NLP Features
 
 * Text Cleaning
 * TF-IDF Vectorization
@@ -95,7 +95,7 @@ Several new features were created to improve predictive performance.
 
 ---
 
-# 🤖 Machine Learning Models
+#Machine Learning Models
 
 The following classification models were trained and evaluated:
 
@@ -115,7 +115,7 @@ Among the evaluated models, **XGBoost achieved the best overall performance**, m
 
 ---
 
-# 🛠️ Technologies Used
+#Technologies Used
 
 * Python
 * Pandas
@@ -133,7 +133,7 @@ Among the evaluated models, **XGBoost achieved the best overall performance**, m
 
 ---
 
-# 📂 Project Structure
+#Project Structure
 
 ```
 ├── Data Collection.ipynb
@@ -148,7 +148,7 @@ Among the evaluated models, **XGBoost achieved the best overall performance**, m
 
 ---
 
-# 🚀 Project Workflow
+#Project Workflow
 
 1. Collect YouTube video data using the YouTube Data API.
 2. Clean and preprocess the dataset.
@@ -162,7 +162,7 @@ Among the evaluated models, **XGBoost achieved the best overall performance**, m
 
 ---
 
-# 📈 Results
+#Results
 
 The project demonstrates that combining structured metadata with NLP features significantly improves predictive performance.
 
@@ -175,9 +175,9 @@ The final model:
 
 ---
 
-# 💡 Future Improvements
+#Future Improvements
 
-Potential enhancements include:
+Potential enhancements to include:
 
 * Deep learning models using BERT or RoBERTa embeddings.
 * Thumbnail image analysis using Computer Vision.
@@ -188,7 +188,7 @@ Potential enhancements include:
 
 ---
 
-# 📚 Learning Outcomes
+#Learning Outcomes
 
 This project strengthened practical skills in:
 
@@ -204,7 +204,7 @@ This project strengthened practical skills in:
 
 ---
 
-# 📬 Contact
+#Contact
 
 If you have any questions, suggestions, or feedback, feel free to connect with me on LinkedIn or explore the project repository.
 
